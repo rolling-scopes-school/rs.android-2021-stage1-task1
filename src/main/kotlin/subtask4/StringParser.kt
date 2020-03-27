@@ -24,7 +24,6 @@ class StringParser {
                             startIndex = endIndex + 1
                             continue
                         }
-                        println(string)
                         resutlStr += string
                         break
                     }

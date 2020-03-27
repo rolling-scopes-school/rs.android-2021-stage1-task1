@@ -5,19 +5,12 @@ import kotlin.math.max
 class HighestPalindrome {
 
     fun highestValuePalindrome(n: Int, k: Int, digitString: String): String {
-
-        val intMaxVal = maxPalindrome(digitString, k)
-
-        return intMaxVal
-    }
-
-    fun maxPalindrome(str: String, kkk: Int): String {
-        var availableSwaps = kkk
+        var availableSwaps = k
         var palin = mutableListOf<Int>()
-        str.forEach { c -> palin.add(c.toString().toInt()) }
+        digitString.forEach { c -> palin.add(c.toString().toInt()) }
 
         var l = 0
-        var r = str.length - 1
+        var r = digitString.length - 1
 
 
         while (l <= r && availableSwaps > 0) {
