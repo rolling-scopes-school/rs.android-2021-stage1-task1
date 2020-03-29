@@ -1,5 +1,7 @@
 package subtask4
 
+import com.sun.org.apache.xpath.internal.functions.FuncSubstring
+
 class StringParser {
 
     // TODO: Complete the following function
@@ -7,7 +9,7 @@ class StringParser {
         val openBrackets = listOf('(', '<', '[')
         val closeBrackets = listOf(')', '>', ']')
 
-        val result = ArrayList<String>()
+        val Substr = ArrayList<String>()
         val string = StringBuilder(inputString)
         var lastBracket = 0
         for (i in string.length - 1 downTo 0) {
@@ -20,10 +22,10 @@ class StringParser {
                         break
                     }
                 }
-                result.add(0, inputString.substring(i + 1, lastBracket))
+                Substr.add(0, inputString.substring(i + 1, lastBracket))
             }
         }
-        return result.toTypedArray()
+        return Substr.toTypedArray()
 
     }
 }
