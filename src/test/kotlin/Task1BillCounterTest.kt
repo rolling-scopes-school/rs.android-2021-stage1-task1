@@ -1,6 +1,6 @@
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import subtask3.BillCounter
+import subtask2.BillCounter
 
 class Task1BillCounterTest {
 

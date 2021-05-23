@@ -1,4 +1,4 @@
-package subtask4
+package subtask3
 
 class StringParser {
 

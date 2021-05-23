@@ -1,7 +1,7 @@
 import org.junit.Test
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertTrue
-import subtask4.StringParser
+import subtask3.StringParser
 
 class Task1StringParserTest {
 
