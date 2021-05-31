@@ -2,7 +2,6 @@ package subtask1
 
 class HappyArray {
 
-    // TODO: Complete the following function
     fun convertToHappy(sadArray: IntArray): IntArray {
         val happyArrayList = sadArray.toCollection(ArrayList())
         val i = 1
