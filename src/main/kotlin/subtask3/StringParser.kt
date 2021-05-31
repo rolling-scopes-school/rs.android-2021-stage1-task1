@@ -1,29 +1,35 @@
 package subtask3
 
 class StringParser {
+    
+fun getResult(inputString: String): Array<String> {
+    
+    val arr= mutableListOf<String>()
 
-    // TODO: Complete the following function
-    fun getResult(inputString: String): Array<String> {
-        val openBrackets = listOf('(', '<', '[')
-        val closeBrackets = listOf(')', '>', ']')
-
-        val result = ArrayList<String>()
-        val string = StringBuilder(inputString)
-        var lastBracket = 0
-        for (i in string.length - 1 downTo 0) {
-            if (openBrackets.contains(string[i])) {
-                for (j in i until string.length) {
-                    if (string[j] == closeBrackets[openBrackets.indexOf(inputString[i])]) {
-                        lastBracket = j
-                        string[lastBracket] = '_'
-                        string[i] = '_'
-                        break
-                    }
-                }
-                result.add(0, inputString.substring(i + 1, lastBracket))
+        for (i in inputString.indices){
+            if(inputString[i]=='<' || inputString[i]=='(' || inputString[i]=='['){
+                arr.add(inputString.substring(i+1, findNextScopeIndex(inputString,i+1,inputString[i])))
             }
         }
-        return result.toTypedArray()
+        return arr.toTypedArray()
     }
+}
+fun findNextScopeIndex(str: String, startIndex: Int, ch : Char) : Int{
+    var toFind =' '
+    var flag =0
+    when (ch){
+        '<' -> toFind ='>'
+        '[' -> toFind = ']'
+        '(' -> toFind = ')'
     }
+    for (i in startIndex .. str.length){
+        when (str[i]){
+            ch      -> flag++
+            toFind  -> {
+                if(flag!=0) flag-- else
+                return i
+            }
+        }
+    }
+    return 0
 }
